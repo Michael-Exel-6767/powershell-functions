@@ -8,3 +8,6 @@ AdjustWindow -ProcessName Raid -X 0 -Y 0 -Width 1107 -Height 635
 
 # Clan vs Clan
 # AdjustWindow -ProcessName Raid -X 0 -Y 0 -Width 1107 -Height 900
+
+# kompaktr
+AdjustWindow -ProcessName Raid -X 0 -Y 0 -Width 1280 -Height 720
