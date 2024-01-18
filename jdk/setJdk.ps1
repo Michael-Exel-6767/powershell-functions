@@ -8,20 +8,20 @@ function setJdk {
 
     try {
 
-        $oldJavaDir = (Get-Command java.exe | Split-Path -Parent).Trim("`n")
-
+        $oldJavaDir = (Get-Command java.exe -ErrorAction SilentlyContinue| Split-Path -Parent)
+        $oldJavaDir = $oldJavaDir.TrimStart("`r`n")
     
-        echo "oldJavaDir=>"$oldJavaDir"<"
+        echo "oldJavaDir=>$oldJavaDir<"
 
         # Get the current Path variable
         $currentPath = $env:Path
 
         # Display the original Path variable
-        Write-Output "Original Path variable: $currentPath"
+        # Write-Output "Original Path variable: $currentPath"
 
         # Replace a specific substring in the Path variable
         # $newString = $jdk  # Replace this with the new string you want
-        $currentPath = $currentPath -replace $oldJavaDir, $pathToJdk
+        $currentPath = $currentPath.replace( $oldJavaDir, $pathToJdk)
 
 
         # Set the updated Path variable
@@ -30,16 +30,17 @@ function setJdk {
 
     }
     catch {
+        $null = $_
         echo "Jdk-Path not set"
         $currentPath = "$jdk;$env:Path"
-        Write-Output "currentPath= $env:Path"   
+        # Write-Output "currentPath= $env:Path"   
     }
     finally {
         $env:Path = $currentPath
 
 
         # Display the updated Path variable
-        Write-Output "Updated Path variable: $env:Path"  
+        # Write-Output "Updated Path variable: $env:Path"  
     }
 }
 
