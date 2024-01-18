@@ -1,0 +1,1 @@
+Set-Window -ProcessName Raid -X 0 -Y 0 -Width 1050 -Height 1380 -Passthru
