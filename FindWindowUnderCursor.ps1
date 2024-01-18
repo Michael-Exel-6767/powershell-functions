@@ -48,7 +48,7 @@ Get-Process | %{
                 $title="$_.MainWindowTitle"
                 if ((Get-DesktopFromWindow ($_.MainWindowHandle)).IsVisible)
                 {
-                    $_.MainWindowTitle + " - " + $_.Handle
+                    $_.MainWindowTitle + " - " + $_.MainWindowHandle
                 }
             }
             catch {}

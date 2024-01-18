@@ -34,3 +34,5 @@ function Install-Software { Write-Host 'I installed some software. Yippee!' }
 # Angepasst ans RSL Fenster
 #AdjustWindow -ProcessName Raid -X 0 -Y 0 -Width 1107 -Height 635
 
+AdjustWindow -ProcessName Raid -X 0 -Y 0 -Width 1280 -Height 720
+

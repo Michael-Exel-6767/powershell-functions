@@ -1,0 +1,1 @@
+﻿Set-Window -ProcessName HD-Player -X 2400 -Y 0 -Width 800 -Height 1183 -Passthru
